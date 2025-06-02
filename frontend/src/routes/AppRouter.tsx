@@ -49,6 +49,17 @@ const App: React.FC = () => {
               </PrivateRoute>
             }
           />
+          <Route
+            path="/groups/:groupId/members"
+            element={
+              <PrivateRoute>
+               <GroupMembersPage
+                  group={{ id: 1, name: "Example Group", ownerId: 1}} 
+                  onBack={() => console.log("Back button clicked")} 
+                />  
+              </PrivateRoute>
+            }
+          />
           <Route path="/groups/:groupId/debts" element={<GroupDebtsPage />} />
           <Route path="/test" element={<TestApiComponent />} />
           <Route
